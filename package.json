@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "lar-dos-fita",
-=======
-  "name": "lar-dos-fitas",
->>>>>>> 94555bbb (first commit)
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -48,9 +44,5 @@
     "last 2 versions",
     "not dead"
   ],
-<<<<<<< HEAD
-  "homepage": "https://lijunio.github.io/lar-dos-fita/"
-=======
-  "homepage": "https://lijunio.github.io/lar-dos-fitas/"
->>>>>>> 94555bbb (first commit)
+  "homepage": "https://lijunio.github.io/Lar-dos-Fita/"
 }
