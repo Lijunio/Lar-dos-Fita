@@ -3,5 +3,5 @@ npm run build
 Remove-Item -Recurse -Force .\docs\*
 Copy-Item -Recurse -Path .\dist\* -Destination .\docs\
 git add .
-git commit -m "Descrição das alterações"
+git commit -m "Alteração da charada"
 git push origin main

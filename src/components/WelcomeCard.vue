@@ -48,15 +48,13 @@ export default {
   },
   methods: {
     promptPassword() {
-      const riddle = `**Responda essa charada para passar:**
+      const riddle = `Responda essa charada para passar:
 
 Tenho apenas um dígito, mas sou maior que zero. Qual número sou eu?
-
 Dica:
 
-. . . Sou o começo de tudo, mas não sou o fim.
-
-. . . Sou a base de todos os números, mas sou único.`;
+.Sou o começo de tudo, mas não sou o fim.
+.Sou a base de todos os números, mas sou único.`;
 
       
       alert(riddle);
