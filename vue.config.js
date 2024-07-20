@@ -1,3 +1,5 @@
 module.exports = {
-  publicPath: '/lar-dos-fita/'
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/Lar-dos-Fita/'
+    : '/'
 };
