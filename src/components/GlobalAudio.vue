@@ -1,7 +1,7 @@
 <template>
   <div>
     <audio ref="audioPlayer" autoplay loop>
-      <source src="/fita.mp3" type="audio/mp3">
+      <source src="fita.mp3" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
   </div>
@@ -20,6 +20,7 @@ export default {
     }
   },
   mounted() {
+    this.playAudio();
     console.log('GlobalAudio component mounted');
   }
 }
