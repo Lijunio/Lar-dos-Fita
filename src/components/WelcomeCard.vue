@@ -48,11 +48,20 @@ export default {
   },
   methods: {
     promptPassword() {
-      const riddle = "Tenho apenas um dígito, mas sou maior que zero. Qual número sou eu?\n\nDica:\nSou o começo de tudo, mas não sou o fim.\nSou a base de todos os números, mas sou único.";
+      const riddle = `**Responda essa charada para passar:**
+
+Tenho apenas um dígito, mas sou maior que zero. Qual número sou eu?
+
+Dica:
+
+. . . Sou o começo de tudo, mas não sou o fim.
+
+. . . Sou a base de todos os números, mas sou único.`;
+
       
       alert(riddle);
       
-      const userAnswer = prompt("Qual é a resposta?");
+      const userAnswer = prompt("Que número eu sou?");
       
       if (userAnswer.toLowerCase() === '1') {
         this.showWifi(true);
