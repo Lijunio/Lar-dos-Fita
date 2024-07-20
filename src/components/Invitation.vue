@@ -2,8 +2,18 @@
   <div class="container">
     <h1>Você foi convidado para o Lar dos Fita?</h1>
     <div class="buttons">
-      <button class="btn btn-primary" @click="handleInvitation('yes')">Sim</button>
-      <button class="btn btn-danger" @click="handleInvitation('no')">Não</button>
+      <button
+        class="btn btn-primary"
+        @click="handleInvitation('yes')"
+      >
+        Sim
+      </button>
+      <button
+        class="btn btn-danger"
+        @click="handleInvitation('no')"
+      >
+        Não
+      </button>
     </div>
   </div>
 </template>
@@ -12,6 +22,12 @@
 import background from '@/assets/background.jpg';
 
 export default {
+  props: {
+    playAudio: {
+      type: Function,
+      required: true
+    }
+  },
   data() {
     return {
       backgroundImage: `url(${background})`
@@ -28,23 +44,25 @@ export default {
     document.body.style.width = '100%';
     document.body.style.overflow = 'hidden';
   },
+  beforeUnmount() {
+    document.body.style.backgroundImage = '';
+  },
   methods: {
     handleInvitation(choice) {
+      this.playAudio(); // Inicia o áudio ao clicar
       if (choice === 'yes') {
         this.$router.push('/home');
       } else if (choice === 'no') {
         this.$router.push('/not-invited');
       }
     }
-  },
-  beforeUnmount() {
-    document.body.style.backgroundImage = '';
   }
 };
 </script>
 
 <style scoped>
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -62,6 +80,7 @@ html, body {
   padding: 16px;
   text-align: center;
   box-sizing: border-box;
+  font-size: 1.5em;
 }
 
 h1 {

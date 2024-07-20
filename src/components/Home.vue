@@ -4,19 +4,53 @@
     <p v-if="!showOverlay">
       Você trouxe boas energias para o Lar dos Fita 🧿?
     </p>
-    <div v-if="!showOverlay" class="buttons">
-      <button class="btn btn-primary" @click="handleChoice('yes')" :disabled="isDisabled">Sim</button>
-      <button class="btn btn-danger" @click="handleChoice('no')" :disabled="isDisabled">Não</button>
-      <button class="btn btn-warning" @click="handleChoice('stillRemoving')" :disabled="isDisabled">Ainda não, mas vou fazer uma reza/oração agora.</button>
+    <div
+      v-if="!showOverlay"
+      class="buttons"
+    >
+      <button
+        class="btn btn-primary"
+        @click="handleChoice('yes')"
+        :disabled="isDisabled"
+      >
+        Sim
+      </button>
+      <button
+        class="btn btn-danger"
+        @click="handleChoice('no')"
+        :disabled="isDisabled"
+      >
+        Não
+      </button>
+      <button
+        class="btn btn-warning"
+        @click="handleChoice('stillRemoving')"
+        :disabled="isDisabled"
+      >
+        Ainda não, mas vou fazer uma reza/oração agora.
+      </button>
     </div>
     <div v-if="showTimer">
       <p>Você tem <strong>{{ timer }}</strong> para fazer sua reza/oração para papai do céu abençoar todos os integrantes do Lar dos Fita</p>
     </div>
-    <div v-if="showOverlay" class="overlay">
+    <div
+      v-if="showOverlay"
+      class="overlay"
+    >
       <p>E agora, você teve 10 segundos para se purificar, já está com boas energias?</p>
       <div class="overlay-buttons">
-        <button class="btn btn-primary" @click="handleOverlayChoice('yes')">Sim</button>
-        <button class="btn btn-danger" @click="handleOverlayChoice('no')">Não</button>
+        <button
+          class="btn btn-primary"
+          @click="handleOverlayChoice('yes')"
+        >
+          Sim
+        </button>
+        <button
+          class="btn btn-danger"
+          @click="handleOverlayChoice('no')"
+        >
+          Não
+        </button>
       </div>
     </div>
   </div>
@@ -33,7 +67,7 @@ export default {
       timer: 10,
       interval: null,
       showOverlay: false,
-      isDisabled: false,
+      isDisabled: false, 
     };
   },
   mounted() {
@@ -52,13 +86,13 @@ export default {
   },
   methods: {
     handleChoice(choice) {
-      if (!this.isDisabled) {
+      if (!this.isDisabled) { 
         if (choice === 'yes') {
           this.$router.push('/welcome');
         } else if (choice === 'no') {
           this.$router.push('/expulsion');
         } else if (choice === 'stillRemoving') {
-          this.isDisabled = true;
+          this.isDisabled = true; 
           this.showTimer = true;
           this.startTimer();
         }
@@ -79,7 +113,7 @@ export default {
           this.timer = 10;
           this.showTimer = false;
           this.showOverlay = true;
-          this.isDisabled = false;
+          this.isDisabled = false; 
         }
       }, 1000);
     }
@@ -111,13 +145,13 @@ html, body {
 h1 {
   font-size: 2em;
   margin-bottom: 1em;
-  color: black;
+  color: black; 
 }
 
 p {
   font-size: 1.5em;
   margin-bottom: 1em;
-  color: black;
+  color: black; 
 }
 
 .buttons {

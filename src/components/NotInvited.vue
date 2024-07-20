@@ -1,13 +1,19 @@
 <template>
   <div class="container">
-    <p ref="line1" class="main-text"></p>
-    <p ref="line2" class="main-text"></p>
+    <p ref="line1" class="main-text" />
+    <p ref="line2" class="main-text" />
     <div v-if="showOptions" class="card">
       <p>Porem já que você teve que subir 4 lances de escada pois temos um bode e por isso ele precisa de espaço, dito isso você poderá mandar mensagem para um dos donos da casa.</p>
       <div class="buttons" v-if="showButtons">
-        <button class="btn btn-pink" @click="contactDanielle">Danielle</button>
-        <button class="btn btn-primary" @click="contactElias">Elias</button>
-        <button class="btn btn-danger" @click="closePage">Desisto</button>
+        <button class="btn btn-pink" @click="contactDanielle">
+          Danielle
+        </button>
+        <button class="btn btn-primary" @click="contactElias">
+          Elias
+        </button>
+        <button class="btn btn-danger" @click="closePage">
+          Desisto
+        </button>
       </div>
     </div>
     <div v-if="showMessage" class="message-overlay">
@@ -78,7 +84,8 @@ export default {
       this.message = 'Repense suas atitudes, vá ao BH que é próximo daqui. Compre cerveja e carnes como forma de desculpas. Você estará fazendo duas coisas boas, ajudando o Cruzeiro e trazendo cerveja';
       setTimeout(() => {
         alert('Se você desiste tão fácil assim realmente não é bem vindo kkkkkkk');
-      }, 100);
+        this.$router.push('/'); // Redireciona para a página inicial após 15 segundos
+      }, 15000); // 15 segundos
     }
   },
   beforeUnmount() {

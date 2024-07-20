@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <router-view />
-    <GlobalAudio />
+    <GlobalAudio ref="globalAudio"/>
+    <router-view :playAudio="playAudio" />
   </div>
 </template>
 
@@ -12,6 +12,18 @@ export default {
   name: 'App',
   components: {
     GlobalAudio
+  },
+  methods: {
+    playAudio() {
+      this.$refs.globalAudio.playAudio();
+    }
+  },
+  mounted() {
+    console.log('App component mounted');
   }
 };
 </script>
+
+<style>
+/* Seu CSS global */
+</style>
