@@ -84,7 +84,7 @@ export default {
       this.message = 'Repense suas atitudes, vá ao BH que é próximo daqui. Compre cerveja e carnes como forma de desculpas. Você estará fazendo duas coisas boas, ajudando o Cruzeiro e trazendo cerveja';
       setTimeout(() => {
         alert('Se você desiste tão fácil assim realmente não é bem vindo kkkkkkk');
-        this.$router.push('/'); // Redireciona para a página inicial após 15 segundos
+        this.$router.push('/'); 
       }, 15000); // 15 segundos
     }
   },

@@ -25,5 +25,5 @@ export default {
 </script>
 
 <style>
-/* Seu CSS global */
+
 </style>
