@@ -75,7 +75,7 @@ export default {
       window.location.href = `https://wa.me/5531997077639?text=${message}`;
     },
     contactElias() {
-      const message = encodeURIComponent("Elijunio você é o ser mais lindo, mais top, mais perfeito que existe, poderia me convidar para sua mansão? Pelo amor de Deus!!");
+      const message = encodeURIComponent("Eu trouxe cerveja e carne, deixa eu entrar na sua casa!!!");
       window.location.href = `https://wa.me/5531973112693?text=${message}`;
     },
     closePage() {
