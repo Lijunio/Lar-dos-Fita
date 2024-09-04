@@ -1,19 +1,22 @@
 <template>
   <div class="container">
-    <h1>Você foi convidado para o Lar dos Fita?</h1>
-    <div class="buttons">
-      <button
-        class="btn btn-primary"
-        @click="handleInvitation('yes')"
-      >
-        Sim
-      </button>
-      <button
-        class="btn btn-danger"
-        @click="handleInvitation('no')"
-      >
-        Não
-      </button>
+    <!-- Card inicial -->
+    <div v-if="showIntroCard" class="intro-card">
+      <p>Para uma melhor experiência...</p>
+      <img src="@/assets/som.png" alt="Imagem de introdução" class="som">
+      <button class="btn btn-close" @click="closeIntroCard">Fechar</button>
+    </div>
+
+    <div v-else>
+      <h1>Você foi convidado para o Lar dos Fita?</h1>
+      <div class="buttons">
+        <button class="btn btn-primary" @click="handleInvitation('yes')">
+          Sim
+        </button>
+        <button class="btn btn-danger" @click="handleInvitation('no')">
+          Não
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -30,7 +33,8 @@ export default {
   },
   data() {
     return {
-      backgroundImage: `url(${background})`
+      backgroundImage: `url(${background})`,
+      showIntroCard: true 
     };
   },
   mounted() {
@@ -48,6 +52,9 @@ export default {
     document.body.style.backgroundImage = '';
   },
   methods: {
+    closeIntroCard() {
+      this.showIntroCard = false; 
+    },
     handleInvitation(choice) {
       this.playAudio(); // Inicia o áudio ao clicar
       if (choice === 'yes') {
@@ -81,6 +88,34 @@ body {
   text-align: center;
   box-sizing: border-box;
   font-size: 1.5em;
+}
+
+.intro-card {
+  background-color: transparent; 
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+
+.intro-card img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.btn-close {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 h1 {
